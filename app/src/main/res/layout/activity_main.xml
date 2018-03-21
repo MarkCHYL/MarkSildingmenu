@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mark="http://schemas.android.com/apk/res-auto"
+    tools:context="com.view.mark.marksildingmenu.MainActivity">
+
+    <com.view.mark.marksildingmenu.view.MarkSlideMenu
+        android:id="@+id/id_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/menubg"
+        mark:rightPadding = "160dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <include layout="@layout/left_menu" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bgcontent" >
+
+                <Button
+                    android:id="@+id/btn_show"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="切换菜单"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </com.view.mark.marksildingmenu.view.MarkSlideMenu>
+
+</RelativeLayout>
