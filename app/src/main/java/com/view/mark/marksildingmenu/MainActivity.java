@@ -9,7 +9,7 @@ import com.view.mark.marksildingmenu.view.MarkSlideMenu;
 
 public class MainActivity extends AppCompatActivity {
 
-    private MarkSlideMenu mLeftMenu;
+    private MarkSlideMenu mMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +23,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mLeftMenu = findViewById(R.id.id_menu);
+        mMenu = findViewById(R.id.id_menu);
+        mMenu.setLeftMenu(false);
+//        mMenu.setmMenuRightPadding(50);
+//        mMenu.setmMenuLeftPadding(50);
+        mMenu.setRightMenu(true);
         findViewById(R.id.btn_show).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                toggleMenu();
+                toggleLeftMenu();
             }
         });
     }
 
-    public void toggleMenu(){
-        mLeftMenu.toggle();
+    public void toggleLeftMenu(){
+        mMenu.toggleLeft();
+    }
+
+    public void openRghtMenu(View view){
+        mMenu.toggleRight();
     }
 
 }

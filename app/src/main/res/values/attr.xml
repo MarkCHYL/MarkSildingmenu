@@ -2,9 +2,15 @@
 <resources>
 
     <attr name="rightPadding" format="dimension"/>
+    <attr name="leftPadding" format="dimension"/>
+    <attr name="isLeftMenu" format="boolean"/>
+    <attr name="isRightMenu" format="boolean"/>
 
     <declare-styleable name="SlidingMenu">
         <attr name="rightPadding"/>
+        <attr name="leftPadding"/>
+        <attr name="isLeftMenu"/>
+        <attr name="isRightMenu"/>
     </declare-styleable>
 
 </resources>
