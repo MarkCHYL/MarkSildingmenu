@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         mMenu = findViewById(R.id.id_menu);
-        mMenu.setLeftMenu(false);
-//        mMenu.setmMenuRightPadding(50);
-//        mMenu.setmMenuLeftPadding(50);
+        mMenu.setLeftMenu(true);
+        mMenu.setmMenuRightPadding(100);
+        mMenu.setmMenuLeftPadding(100);
         mMenu.setRightMenu(true);
         findViewById(R.id.btn_show).setOnClickListener(new View.OnClickListener() {
             @Override

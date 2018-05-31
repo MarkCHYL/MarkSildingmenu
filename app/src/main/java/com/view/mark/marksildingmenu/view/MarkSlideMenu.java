@@ -1,7 +1,10 @@
 package com.view.mark.marksildingmenu.view;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -13,6 +16,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.nineoldandroids.view.ViewHelper;
 import com.view.mark.marksildingmenu.R;
 import com.view.mark.marksildingmenu.SlideUtils;
 
@@ -296,25 +300,11 @@ public class MarkSlideMenu extends HorizontalScrollView {
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-        float scale = l * 1.0f / mLeftMenuWidth; // 1 ~ 0
-
-
-        float rightScale = 0.7f + 0.3f * scale;
-        float leftScale = 1.0f - scale * 0.3f;
-        float leftAlpha = 0.6f + 0.4f * (1 - scale);
-
-//        // ?????????????????TranslationX
-//        ViewHelper.setTranslationX(mMenu, mMenuWidth * scale * 0.8f);
-//
-//        ViewHelper.setScaleX(mMenu, leftScale);
-//        ViewHelper.setScaleY(mMenu, leftScale);
-//        ViewHelper.setAlpha(mMenu, leftAlpha);
-//        // ????content????????????
-//        ViewHelper.setPivotX(mContent, 0);
-//        ViewHelper.setPivotY(mContent, mContent.getHeight() / 2);
-//        ViewHelper.setScaleX(mContent, rightScale);
-//        ViewHelper.setScaleY(mContent, rightScale);
-
+        Log.d("minus", "l-oldl = " + (l - oldl));
+        float scale = l * 1.0f / isWidth; // 1 ~ 0
+        if (isLeftMenu){
+            ViewHelper.setTranslationX(mLeftMenu, isWidth * scale);
+        }
     }
 
 }
